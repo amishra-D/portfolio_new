@@ -13,6 +13,7 @@ import { HiLocationMarker } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
 import Cta from "./Cta.jsx"
 import { FaChessBishop } from "react-icons/fa"
+import getTimeGreeting from '../hooks/timegreeting.js'
 const Sidecard = () => {
     const [subtitle,setsubtitle]=useState("Developer")
     const [isDark, setIsDark] = useState(false)
@@ -39,14 +40,14 @@ const Sidecard = () => {
 
   return () => clearInterval(interval);
 }, []);
-
+const greet=getTimeGreeting()
 
     return (
         <div className="w-full lg:w-1/2 flex flex-col mt-20 text-primary bg-surface font-mono">
 
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6 px-6 sm:px-10 lg:px-16">
                 <div className="max-w-xl">
-                    <h1 className="font-bold text-4xl sm:text-6xl group">Hi I'm Anshu<span className="invisible absolute left-10 text-sm group-hover:visible"><FaChessBishop/></span></h1>
+                    <h1 className="font-bold text-4xl sm:text-6xl">Hi I'm Anshu<span className="invisible absolute left-10 text-sm group-hover:visible"><FaChessBishop/></span></h1>
                     <p className="font-semibold text-lg sm:text-xl text-secondary transition-opacity duration-500 ease-in-out opacity-100">
                         {subtitle}
                     </p>
@@ -72,17 +73,35 @@ const Sidecard = () => {
                     </a>
                 </div>
 
-                <img
-                    src={pfp}
-                    alt="Profile"
-                    className="
-            rounded-full
-            w-24 h-24 sm:w-28 sm:h-28
-            object-cover
-            transition-transform duration-300 ease-in-out
-            hover:scale-110
-          "
-                />
+               <div className="relative flex justify-center transition-transform duration-300 ease-in-out
+      hover:scale-110">
+  <img
+    src={pfp}
+    alt="Profile"
+    className="
+      rounded-full
+      w-24 h-24 sm:w-28 sm:h-28
+      object-cover
+    "
+  />
+
+  <span
+    className="
+      absolute left-12 -top-3
+      px-3 py-2
+      bg-secondary
+      text-xs
+      rounded-sm
+      bg-secondary/90
+      text-primary
+      animate-tooltip
+      whitespace-nowrap
+    "
+  >
+    {greet}
+  </span>
+</div>
+
             </div>
             <Section id='about'>
                 <h2 className="font-bold text-xl">About</h2>
@@ -154,7 +173,7 @@ const Sidecard = () => {
             </Section>
             <Seaparator />
             <Section>
-                <h2 className="text-primary font-bold text-lg sm:text-xl">Personal Life</h2>
+                <h2 className="text-primary font-bold text-lg sm:text-xl">Life</h2>
                 <Personal></Personal>
             </Section>
             <Section id='contactus'>

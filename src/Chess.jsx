@@ -26,13 +26,10 @@ function RatingCard({ label, icon, current, best, games }) {
         transition-all duration-300
       "
     >
-      {/* Header */}
       <div className="flex items-center gap-2 mb-3 text-primary">
         {icon}
         <span className="text-sm font-medium">{label}</span>
       </div>
-
-      {/* Ratings */}
       <div className="flex justify-between items-end">
         <div>
           <p className="text-xs text-secondary">Current</p>
@@ -51,7 +48,6 @@ function RatingCard({ label, icon, current, best, games }) {
         )}
       </div>
 
-      {/* Hover Games Badge */}
       <div
         className="
           pointer-events-none
@@ -234,7 +230,11 @@ function ChessProfileCard({ username }) {
         <span className="text-secondary">Peak:</span>
         <span className="font-bold text-primary">{peakRating}</span>
       </div>
-    </div>
+<div className="mt-6 flex justify-center">
+  <a href='https://www.chess.com/member/beefygotit' className="font-bold bg-green-700 text-sm px-4 py-2 text-white rounded-md ">
+    Play Together
+  </a>
+</div>    </div>
   )
 }
 
