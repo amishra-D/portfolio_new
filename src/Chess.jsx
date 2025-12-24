@@ -14,7 +14,7 @@ import { getChessProfile } from "./ChessAPI"
 import ChessLoader from "./Components/ChessLoader"
 import { BiChevronLeft } from "react-icons/bi"
 import { useNavigate } from "react-router-dom"
-import BackButton from "./Components/backbutton"
+import Bbutton from "./Components/Bbutton"
 function RatingCard({ label, icon, current, best, games }) {
   return (
     <div
@@ -181,8 +181,7 @@ const navigate=useNavigate()
 
   return (
     <>
-    <BackButton></BackButton>
-
+    <Bbutton/>
     <div className="rounded-xl bg-surface p-6 max-w-md mx-auto font-mono">
       <div className="flex items-center gap-4 mb-2 mt-10">
         <div className="relative">

@@ -1,7 +1,6 @@
 import React from "react"
 import Seaparator from "./Components/Seaparator"
-import { BiChevronLeft } from "react-icons/bi"
-import BackButton from "./Components/backbutton"
+import Bbutton from "./Components/Bbutton"
 const movies = [
   {
     name: "Incendies",
@@ -38,7 +37,7 @@ const movies = [
 function Movies() {
   return (
     <div className="w-full lg:w-1/2 px-6 sm:px-10 lg:px-16 mt-10 text-primary mb-4">
-      <BackButton/>
+      <Bbutton/>
    <h1 className="sm:text-3xl text-2xl font-bold text-primary mb-2 font-mono mt-8">
   Movies
 </h1>   

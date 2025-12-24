@@ -1,6 +1,6 @@
 import React from "react"
 import Seaparator from "./Components/Seaparator"
-import BackButton from "./Components/backbutton"
+import Bbutton from "./Components/Bbutton"
 const songs = [
   {
     title: "Prosper",
@@ -43,7 +43,7 @@ const songs = [
 function Songs() {
   return (
   <>
-        <BackButton/>
+        <Bbutton/>
       <div className="w-full lg:w-1/2 px-6 sm:px-10 lg:px-16 mt-16 text-primary">
       <h1 className="text-2xl font-bold mb-2 font-mono">Songs</h1>
       <h1 className="sm:text-lg text-sm text-secondary mb-6 font-sans">

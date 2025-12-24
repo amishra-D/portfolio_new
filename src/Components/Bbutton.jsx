@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom"
 import { useNavigate } from "react-router-dom"
 
-export default function BackButton() {
+export default function Bbutton() {
   const navigate = useNavigate()
 
   return createPortal(
