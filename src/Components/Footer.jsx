@@ -2,8 +2,9 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className='bg-default w-full rounded-t-xl border-default border-[0.2px]'>
-     <p className='text-primary sm:text-lg text-md font-bold p-10'>Let's Connect</p>
+    <div className='w-full p-8 flex flex-col jestify-center items-center text-xs font-sans'>
+    <p>Design & Developed by Anshu Mishra</p>
+    <p>© 2025. All rights reserved.</p>
     </div>
   )
 }

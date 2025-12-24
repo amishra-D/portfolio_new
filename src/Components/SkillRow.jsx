@@ -5,19 +5,36 @@ const SkillRow = ({ title, items }) => (
     </h3>
 
     <div className="flex flex-wrap gap-4">
-      {items.map(({ name, icon: Icon }) => (
-        <div
+      {items.map(({ name, icon: Icon, link }) => (
+        <a
           key={name}
-          className="group flex flex-col items-center gap-1 hover:scale-120 transition-all ease-in-out duration-200"
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${name} documentation`}
+          className="
+            group
+            flex flex-col items-center gap-1
+            transition-all duration-200
+            hover:scale-110
+          "
         >
-
-          <Icon className="text-2xl text-primary group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition" />
+          <Icon
+            className="
+              text-2xl
+              text-primary
+              group-hover:text-neutral-700
+              dark:group-hover:text-neutral-300
+              transition
+            "
+          />
           <span className="text-[10px] text-neutral-400">
             {name}
           </span>
-        </div>
+        </a>
       ))}
     </div>
   </div>
 )
+
 export default SkillRow

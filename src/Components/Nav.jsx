@@ -51,20 +51,16 @@ const Nav = () => {
       <a href="https://github.com/amishra-d" target="_blank" rel="noreferrer" className="hover:scale-135 transition-all ease-in-out duration-200">
         <FaGithub className="nav-icon" />
       </a>
-
       <a href="https://www.linkedin.com/in/anshu-mishra-a5b645291/" target="_blank" rel="noreferrer" className="hover:scale-135 transition-all ease-in-out duration-200">
         <FaLinkedin className="nav-icon" />
       </a>
-
       <a href="https://x.com/Anshu_mishraD" target="_blank" rel="noreferrer" className="hover:scale-135 transition-all ease-in-out duration-200">
         <FaTwitter className="nav-icon" />
       </a>
-
       <button onClick={toggleTheme} title="Toggle theme" className="hover:scale-135 transition-all ease-in-out duration-200">
         {isDark ? <HiSun className="nav-icon" /> : <HiMoon className="nav-icon" />}
       </button>
     </div>
   )
 }
-
 export default Nav

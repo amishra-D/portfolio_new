@@ -11,6 +11,8 @@ import Seaparator from "./Seaparator.jsx"
 import Personal from "./Personal.jsx"
 import { HiLocationMarker } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
+import Cta from "./Cta.jsx"
+import { FaChessBishop } from "react-icons/fa"
 const Sidecard = () => {
     const [subtitle,setsubtitle]=useState("Developer")
     const [isDark, setIsDark] = useState(false)
@@ -44,7 +46,7 @@ const Sidecard = () => {
 
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6 px-6 sm:px-10 lg:px-16">
                 <div className="max-w-xl">
-                    <h1 className="font-bold text-4xl sm:text-6xl">Hi I'm Anshu</h1>
+                    <h1 className="font-bold text-4xl sm:text-6xl group">Hi I'm Anshu<span className="invisible absolute left-10 text-sm group-hover:visible"><FaChessBishop/></span></h1>
                     <p className="font-semibold text-lg sm:text-xl text-secondary transition-opacity duration-500 ease-in-out opacity-100">
                         {subtitle}
                     </p>
@@ -59,7 +61,7 @@ const Sidecard = () => {
                         </div>
                     </div>
 
-                    <div className="mt-2 flex gap-2">
+                    <a href='https://mail.google.com/mail/?view=cm&fs=1&to=anshumishraocog@gmail.com' className="mt-2 flex gap-2">
                         <div className="bg-secondary p-2 rounded-md"><MdEmail/></div>
                                                 <div>
                         <p className="font-semibold text-sm">Email</p>
@@ -67,7 +69,7 @@ const Sidecard = () => {
                             anshumishraocog@gmail.com
                         </p>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <img
@@ -102,7 +104,7 @@ const Sidecard = () => {
             <Section>
                 <h2 className="font-bold text-xl">Consistency</h2>
                 <p className="text-secondary text-sm mb-4">
-                    Daily problem solving on LeetCode
+                    Daily problem solving on <a className='text-primary underline underline-offset-1' href='https://leetcode.com/u/AnshuM18/'>LeetCode</a>
                 </p>
 
                 <img
@@ -155,8 +157,11 @@ const Sidecard = () => {
                 <h2 className="text-primary font-bold text-lg sm:text-xl">Personal Life</h2>
                 <Personal></Personal>
             </Section>
+            <Section id='contactus'>
+                <Cta/>
+            </Section>
             <Section>
-                <h1 className="text-4xl font-bold mb-10 mx-auto">Let's Connect</h1>
+                <Footer/>        
             </Section>
         </div>
     )

@@ -16,7 +16,7 @@ function Sidebar() {
     <div
       className="
         fixed top-1/2 right-4 -translate-y-1/2
-        flex flex-col gap-3 invisible sm:visible sm:text-md z-40
+        flex flex-col gap-1 invisible sm:visible sm:text-md z-40
         select-none
       "
     >
@@ -44,9 +44,9 @@ function Sidebar() {
       </a>
 
       <a
-        className={linkClass("contact")}
-        onClick={() => setActive("contact")}
-        href="#connect"
+        className={linkClass("contactus")}
+        onClick={() => setActive("contactus")}
+        href="#contactus"
       >
         Let's Connect
       </a>
