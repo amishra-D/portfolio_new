@@ -8,9 +8,10 @@ const SkillRow = ({ title, items }) => (
       {items.map(({ name, icon: Icon }) => (
         <div
           key={name}
-          className="group flex flex-col items-center gap-1"
+          className="group flex flex-col items-center gap-1 hover:scale-120 transition-all ease-in-out duration-200"
         >
-          <Icon className="text-2xl text-primary group-hover:text-neutral-300 transition" />
+
+          <Icon className="text-2xl text-primary group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition" />
           <span className="text-[10px] text-neutral-400">
             {name}
           </span>

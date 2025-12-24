@@ -31,8 +31,6 @@ import {
   SiCss3,
 } from "react-icons/si"
 
-// ================== STACK DATA ==================
-
 const languages = [
   { name: "JavaScript", icon: SiJavascript },
   { name: "TypeScript", icon: SiTypescript },

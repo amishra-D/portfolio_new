@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
 @custom-variant dark (&:where(.dark, .dark *));@layer components {
   .bg-surface {
     @apply bg-white dark:bg-neutral-950;
@@ -8,7 +10,7 @@
     @apply bg-neutral-950 dark:bg-white;
   }
  .bg-secondary{
-    @apply bg-zinc-200 dark:bg-neutral-800;
+    @apply bg-zinc-200 dark:bg-neutral-900;
  }
   .bg-card {
     @apply bg-white dark:bg-neutral-800;
@@ -25,4 +27,22 @@
   .border-default {
     @apply border-neutral-950 dark:border-neutral-400;
   }
+}
+.fade-blur {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(12px);
+  transition:
+    opacity 0.6s ease,
+    filter 0.6s ease,
+    transform 0.6s ease;
+}
+
+.fade-blur.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+body{
+  scroll-behavior: smooth;
 }
