@@ -12,7 +12,9 @@ import {
 } from "react-icons/fa"
 import { getChessProfile } from "./ChessAPI"
 import ChessLoader from "./Components/ChessLoader"
-
+import { BiChevronLeft } from "react-icons/bi"
+import { useNavigate } from "react-router-dom"
+import BackButton from "./Components/backbutton"
 function RatingCard({ label, icon, current, best, games }) {
   return (
     <div
@@ -25,8 +27,7 @@ function RatingCard({ label, icon, current, best, games }) {
         font-mono
         transition-all duration-300
       "
-    >
-      <div className="flex items-center gap-2 mb-3 text-primary">
+    >      <div className="flex items-center gap-2 mb-3 text-primary">
         {icon}
         <span className="text-sm font-medium">{label}</span>
       </div>
@@ -71,7 +72,7 @@ function RatingCard({ label, icon, current, best, games }) {
 function ChessProfileCard({ username }) {
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
-
+const navigate=useNavigate()
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true)
@@ -179,8 +180,11 @@ function ChessProfileCard({ username }) {
 
 
   return (
+    <>
+    <BackButton></BackButton>
+
     <div className="rounded-xl bg-surface p-6 max-w-md mx-auto font-mono">
-      <div className="flex items-center gap-4 mb-2">
+      <div className="flex items-center gap-4 mb-2 mt-10">
         <div className="relative">
           <div className="w-16 h-16 rounded-full overflow-hidden border border-primary/20 bg-primary/5 flex items-center justify-center">
             {profile.avatar ? (
@@ -231,10 +235,11 @@ function ChessProfileCard({ username }) {
         <span className="font-bold text-primary">{peakRating}</span>
       </div>
 <div className="mt-6 flex justify-center">
-  <a href='https://www.chess.com/member/beefygotit' className="font-bold bg-green-700 text-sm px-4 py-2 text-white rounded-md ">
+  <a href='https://www.chess.com/member/beefygotit' className="font-bold bg-gradient-to-b from-[#7FA650] to-[#5C8A3B] text-sm px-4 py-2 text-white rounded-md ">
     Play Together
   </a>
 </div>    </div>
+</>
   )
 }
 

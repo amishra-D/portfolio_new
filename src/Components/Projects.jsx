@@ -65,7 +65,7 @@ const projects = [
     description:
       "A habit tracking application designed to help users build consistent routines, featuring daily tracking, progress visualization, and an analytics-driven dashboard.",
     image: ddf,
-    link:"https://zynk-fvm9.vercel.app/",
+    link:"https://amishra-d.github.io/DailyDrift/",
     stack:[SiFirebase,SiReact,SiTailwindcss]
   },
 ]

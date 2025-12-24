@@ -1,5 +1,7 @@
 import React from "react"
-
+import Seaparator from "./Components/Seaparator"
+import { BiChevronLeft } from "react-icons/bi"
+import BackButton from "./Components/backbutton"
 const movies = [
   {
     name: "Incendies",
@@ -35,10 +37,15 @@ const movies = [
 
 function Movies() {
   return (
-    <div className="w-full lg:w-1/2 px-6 sm:px-10 lg:px-16 mt-20 text-primary">
-      
-      <h1 className="sm:text-3xl text-xl font-bold mb-6 font-mono">Favourite Movies</h1>
-
+    <div className="w-full lg:w-1/2 px-6 sm:px-10 lg:px-16 mt-10 text-primary mb-4">
+      <BackButton/>
+   <h1 className="sm:text-3xl text-2xl font-bold text-primary mb-2 font-mono mt-8">
+  Movies
+</h1>   
+<h1 className="sm:text-lg text-sm text-secondary mb-6 font-sans">
+  Movies that shaped my perspective through life's highs and lows.
+</h1>
+<Seaparator/>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
         {movies.map((movie) => (
           <div

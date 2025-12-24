@@ -40,8 +40,12 @@ const Sidecard = () => {
 
   return () => clearInterval(interval);
 }, []);
-const greet=getTimeGreeting()
-
+const [greet,setgreet]=useState("Hello")
+useEffect(()=>{
+    setTimeout(()=>{
+        setgreet(getTimeGreeting())
+    },3000)
+},[])
     return (
         <div className="w-full lg:w-1/2 flex flex-col mt-20 text-primary bg-surface font-mono">
 
@@ -72,7 +76,6 @@ const greet=getTimeGreeting()
                         </div>
                     </a>
                 </div>
-
                <div className="relative flex justify-center transition-transform duration-300 ease-in-out
       hover:scale-110">
   <img
@@ -95,8 +98,7 @@ const greet=getTimeGreeting()
       bg-secondary/90
       text-primary
       animate-tooltip
-      whitespace-nowrap
-    "
+      whitespace-nowrap"
   >
     {greet}
   </span>
@@ -110,9 +112,9 @@ const greet=getTimeGreeting()
                     strong interest in machine learning and data-driven problem solving.
                     Actively working on low-latency, interactive features, scalable backend
                     flows, and practical{" "}
-                    <span className="text-primary font-medium underline underline-offset-1">
+                    <a href='https://www.ibm.com/think/topics/machine-learning' className="text-primary font-medium underline underline-offset-1">
                         Machine Learning
-                    </span>{" "}
+                    </a>{" "}
                     models while continuously learning and building. Check out my{" "}
                     <a className="text-primary font-medium underline underline-offset-1" href="https://drive.google.com/file/d/17yHzHcaXlqKxsVxd5oS8Y3Ok2bmzhTJo/view?usp=sharing">
                         Resume

@@ -43,9 +43,6 @@
   filter: blur(0);
   transform: translateY(0);
 }
-body{
-  scroll-behavior: smooth;
-}
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -69,6 +66,9 @@ body{
     opacity: 1;
     transform: translateY(0);
   }
+}
+html, body {
+  overflow-x: hidden;
 }
 
 .animate-tooltip {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { HiMoon, HiSun, HiHome } from "react-icons/hi"
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
 import { useNavigate } from "react-router-dom"
-
+import { IoMdMenu } from "react-icons/io";
 const Nav = () => {
   const navigate = useNavigate()
   const [isDark, setIsDark] = useState(false)
@@ -33,7 +33,6 @@ const Nav = () => {
       setIsDark(true)
     }
   }
-
   return (
     <div
       className="

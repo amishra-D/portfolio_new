@@ -28,6 +28,7 @@ function App() {
     <div className='relative w-full min-h-screen bg-surface flex justify-center selection:bg-green-300 selection:text-green-900'>
       <Routes>
     <Route path='/' element={<Sidecard/>}></Route>
+        <Route path='*' element={<Sidecard/>}></Route>
         <Route path='/chess' element={<ChessStats/>}></Route>
     <Route path='/movies' element={<Movies/>}></Route>
     <Route path='/songs' element={<Songs/>}></Route>
@@ -36,7 +37,7 @@ function App() {
     </div>
       </FadeIn>
       <div className="fixed left-1/2 -translate-x-1/2 bottom-4 z-50">
-            <Nav />
+           {location.pathname === "/" &&  (<Nav />)}
           </div>
        {message && (
   <div

@@ -1,5 +1,6 @@
 import React from "react"
-
+import Seaparator from "./Components/Seaparator"
+import BackButton from "./Components/backbutton"
 const songs = [
   {
     title: "Prosper",
@@ -41,9 +42,14 @@ const songs = [
 
 function Songs() {
   return (
-    <div className="w-full lg:w-1/2 px-6 sm:px-10 lg:px-16 mt-20 text-primary">
-      <h1 className="text-2xl font-bold mb-6 font-mono">Favourite Songs</h1>
-
+  <>
+        <BackButton/>
+      <div className="w-full lg:w-1/2 px-6 sm:px-10 lg:px-16 mt-16 text-primary">
+      <h1 className="text-2xl font-bold mb-2 font-mono">Songs</h1>
+      <h1 className="sm:text-lg text-sm text-secondary mb-6 font-sans">
+  Songs that soundtrack my work, thoughts, and quiet moments.
+</h1>
+<Seaparator/>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {songs.map((song) => (
           <div
@@ -70,6 +76,7 @@ function Songs() {
         ))}
       </div>
     </div>
+      </>
   )
 }
 
