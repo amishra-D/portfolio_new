@@ -89,7 +89,7 @@ const Sidecard = () => {
                     strong interest in machine learning and data-driven problem solving.
                     Actively working on low-latency, interactive features, scalable backend
                     flows, and practical{" "}
-                    <span href='' className="text-primary font-medium underline underline-offset-1">
+                    <span className="text-primary font-medium underline underline-offset-1">
                         Machine Learning
                     </span>{" "}
                     models while continuously learning and building. Check out my{" "}
