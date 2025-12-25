@@ -1,59 +1,34 @@
 import React from "react"
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
+import { FaExternalLinkAlt } from "react-icons/fa"
 
-function ProjectCard({ title, description, image, link, stack, githubLink }) {
+function ProjectCard({ title, description, image, link, stack }) {
   return (
     <div className="
-      flex flex-col bg-surface rounded-xl overflow-hidden
-      border border-white/[0.08]
-      transition-all duration-300
-      hover:-translate-y-1 hover:shadow-xl
-      h-full
+      border border-white/10 dark:border-neutral-900/10 rounded-lg
+      bg-secondary
+      overflow-hidden hover:scale-105 transition-transform ease-in-out duration-200
     ">
-      <div className="h-44 w-full overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
+      <img
+        src={image}
+        alt={title}
+        className="h-44 w-full object-cover"
+      />
 
-      <div className="p-5 flex-1">
-        <h3 className="text-lg font-semibold text-primary mb-2">
+      <div className="p-4 space-y-3">
+        <h3 className="text-lg font-semibold text-primary">
           {title}
         </h3>
 
-        <p className="text-sm text-secondary leading-relaxed line-clamp-3">
+        <p className="text-sm text-secondary">
           {description}
         </p>
 
-        <div className="flex flex-wrap gap-2 mt-4">
-          {stack?.slice(0, 4).map((Icon, idx) => (
-            <div
-              key={idx}
-              className="
-                p-2 rounded-md
-                bg-white/[0.05]
-                border border-white/[0.08]
-                text-secondary
-              "
-            >
-              <Icon className="text-sm" />
-            </div>
+        <div className="flex flex-wrap gap-2 text-secondary">
+          {stack.map((Icon, i) => (
+            <Icon key={i} className="text-sm" />
           ))}
-          {stack && stack.length > 4 && (
-            <span className="text-xs text-secondary">
-              +{stack.length - 4}
-            </span>
-          )}
         </div>
-      </div>
-      <div className="
-        flex items-center justify-between
-        px-5 py-4
-        border-t border-white/[0.08]
-      ">
+
         {link && (
           <a
             href={link}
@@ -61,27 +36,11 @@ function ProjectCard({ title, description, image, link, stack, githubLink }) {
             rel="noopener noreferrer"
             className="
               inline-flex items-center gap-2
-              text-sm font-medium text-primary
+              text-sm text-primary
               hover:underline
             "
           >
             Live Demo <FaExternalLinkAlt className="text-xs" />
-          </a>
-        )}
-
-        {githubLink && (
-          <a
-            href={githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              inline-flex items-center gap-2
-              text-sm text-secondary
-              hover:text-primary
-            "
-          >
-            <FaGithub className="text-lg" />
-            <span className="hidden sm:inline">GitHub</span>
           </a>
         )}
       </div>

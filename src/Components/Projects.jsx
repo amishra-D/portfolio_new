@@ -1,83 +1,75 @@
-import React from "react"
 import ProjectCard from "./ProjectCard"
-import Logo from "../assets/Logo.jpg"
 import Threadly from "../assets/Threadly.png"
 import Zynk from "../assets/Zynk.png"
 import ddf from "../assets/DailyDrift.png"
 import diab from "../assets/diab.png"
+
 import {
   SiJavascript,
-  SiTypescript,
   SiPython,
-  SiCplusplus,
-
   SiReact,
   SiTailwindcss,
   SiRedux,
   SiNodedotjs,
   SiExpress,
-
   SiMongodb,
   SiFirebase,
-  SiMysql,
   SiRedis,
-
   SiWebrtc,
   SiSocketdotio,
-
   SiNumpy,
   SiPandas,
   SiScikitlearn,
-
-  SiGit,
-  SiGithub,
-  SiHtml5,
-  SiCss3,
 } from "react-icons/si"
+
 const projects = [
   {
     title: "Threadly",
     description:
-      "An anonymous discussion platform inspired by Reddit, allowing users to create posts, share media, and interact through upvotes and comments while preserving user anonymity.",
+      "Anonymous discussion platform with posts, media sharing, upvotes, and comments.",
     image: Threadly,
-    link:"https://threadly-3859.vercel.app/",
-    stack:[ SiReact,SiTailwindcss,SiRedux,SiNodedotjs,SiExpress,SiMongodb,]
+    link: "https://threadly-3859.vercel.app/",
+    stack: [SiReact, SiTailwindcss, SiRedux, SiNodedotjs, SiExpress, SiMongodb],
   },
   {
     title: "Zynk",
     description:
-      "A real-time video calling application built using WebRTC, featuring one-to-one video calls, in-call chat, and media controls for microphone and camera.",
+      "One-to-one real-time video calling app with chat and media controls.",
     image: Zynk,
-    link:"https://zynk-fvm9.vercel.app/",
-    stack:[SiJavascript,SiWebrtc,SiSocketdotio,SiRedis,SiNodedotjs,SiExpress]
+    link: "https://zynk-fvm9.vercel.app/",
+    stack: [
+      SiJavascript,
+      SiWebrtc,
+      SiSocketdotio,
+      SiRedis,
+      SiNodedotjs,
+      SiExpress,
+    ],
   },
   {
     title: "Diabetes Prediction",
     description:
-      "A machine learning project that predicts the likelihood of diabetes using medical data, applying preprocessing, feature analysis, and multiple classification models for evaluation.",
+      "Machine learning model to predict diabetes using medical data.",
     image: diab,
-    stack:[SiNumpy,
-  SiPandas,
-  SiScikitlearn,SiPython]
+    stack: [SiPython, SiNumpy, SiPandas, SiScikitlearn],
   },
   {
     title: "DailyDrift",
     description:
-      "A habit tracking application designed to help users build consistent routines, featuring daily tracking, progress visualization, and an analytics-driven dashboard.",
+      "Habit tracking app with daily logs and progress visualization.",
     image: ddf,
-    link:"https://amishra-d.github.io/DailyDrift/",
-    stack:[SiFirebase,SiReact,SiTailwindcss]
+    link: "https://amishra-d.github.io/DailyDrift/",
+    stack: [SiReact, SiTailwindcss, SiFirebase],
   },
 ]
 
 function Projects() {
   return (
-    <div className="grid grid-cols-2 gap-2 font-sans">
+    <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-sans">
       {projects.map((project) => (
-  <ProjectCard key={project.title} {...project} />
-))}
-
-    </div>
+        <ProjectCard key={project.title} {...project} />
+      ))}
+    </section>
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Card from "./Card"
 import Skills2 from "./Skills2"
 import Projects from "./Projects"
@@ -15,7 +15,7 @@ import Cta from "./Cta.jsx"
 import { FaChessBishop } from "react-icons/fa"
 import getTimeGreeting from '../hooks/timegreeting.js'
 const Sidecard = () => {
-    const [subtitle,setsubtitle]=useState("Developer")
+    const [subtitle, setsubtitle] = useState("Developer")
     const [isDark, setIsDark] = useState(false)
     useEffect(() => {
         const root = document.documentElement
@@ -28,68 +28,92 @@ const Sidecard = () => {
         observer.observe(root, { attributes: true })
         return () => observer.disconnect()
     }, [])
-    
-   useEffect(() => {
-  const titles = ["Developer", "Engineer"];
-  let index = 0;
 
-  const interval = setInterval(() => {
-    index = (index + 1) % titles.length;
-    setsubtitle(titles[index]);
-  }, 3000);
+    useEffect(() => {
+        const titles = ["Developer", "Engineer"];
+        let index = 0;
 
-  return () => clearInterval(interval);
-}, []);
-const [greet,setgreet]=useState("Hello")
-useEffect(()=>{
-    setTimeout(()=>{
-        setgreet(getTimeGreeting())
-    },3000)
-},[])
+        const interval = setInterval(() => {
+            index = (index + 1) % titles.length;
+            setsubtitle(titles[index]);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, []);
+    const [greet, setgreet] = useState('Hello')
+    const timerRef = useRef(null);
+    const handleMouseEnter = () => {
+        timerRef.current = setTimeout(() => {
+            setgreet(getTimeGreeting());
+            setVisible(false);
+        }, 2000);
+    };
+
+    const handleMouseLeave = () => {
+        clearTimeout(timerRef.current);
+    };
     return (
-        <div className="w-full lg:w-1/2 flex flex-col mt-20 text-primary bg-surface font-mono">
+        <div className="w-full lg:w-1/2 flex flex-col mt-10 text-primary bg-surface font-mono">
 
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6 px-6 sm:px-10 lg:px-16">
                 <div className="max-w-xl">
-                    <h1 className="font-bold text-4xl sm:text-6xl">Hi I'm Anshu<span className="invisible absolute left-10 text-sm group-hover:visible"><FaChessBishop/></span></h1>
+                    <h1 className="font-bold text-4xl sm:text-6xl">Hi I'm Anshu<span className="invisible absolute left-10 text-sm group-hover:visible"><FaChessBishop /></span></h1>
                     <p className="font-semibold text-lg sm:text-xl text-secondary transition-opacity duration-500 ease-in-out opacity-100">
                         {subtitle}
                     </p>
+                    <div className="flex gap-2 mt-2 cursor-default">
+                        <span className="
+    text-xs font-medium
+    px-2 py-1 rounded-full
+    bg-green-500/10 text-green-600
+    border border-green-500/20
+  ">
+                            Open to Work
+                        </span>
 
-                    <div className="mt-4 flex gap-2">
-                        <div className="bg-secondary p-2 rounded-md"><HiLocationMarker/></div>
-                        <div>
-                        <p className="font-semibold text-sm">Location</p>
-                        <p className="text-xs text-secondary">
-                            Serampore, West Bengal
-                        </p>
-                        </div>
+                        <span className="
+    text-xs font-medium
+    px-2 py-1 rounded-full
+    bg-blue-500/10 text-blue-600
+    border border-blue-500/20
+  ">
+                            Open to Intern
+                        </span>
                     </div>
 
+                    <a href='https://maps.app.goo.gl/2QXuJC1PQrwDkhwh7' className="mt-4 flex gap-2">
+                        <div className="bg-secondary p-2 rounded-md"><HiLocationMarker /></div>
+                        <div>
+                            <p className="font-semibold text-sm">Location</p>
+                            <p className="text-xs text-secondary">
+                                Serampore, West Bengal
+                            </p>
+                        </div>
+                    </a>
+
                     <a href='https://mail.google.com/mail/?view=cm&fs=1&to=anshumishraocog@gmail.com' className="mt-2 flex gap-2">
-                        <div className="bg-secondary p-2 rounded-md"><MdEmail/></div>
-                                                <div>
-                        <p className="font-semibold text-sm">Email</p>
-                        <p className="text-xs text-secondary break-all">
-                            anshumishraocog@gmail.com
-                        </p>
+                        <div className="bg-secondary p-2 rounded-md"><MdEmail /></div>
+                        <div>
+                            <p className="font-semibold text-sm">Email</p>
+                            <p className="text-xs text-secondary break-all">
+                                anshumishraocog@gmail.com
+                            </p>
                         </div>
                     </a>
                 </div>
-               <div className="relative flex justify-center transition-transform duration-300 ease-in-out
-      hover:scale-110">
-  <img
-    src={pfp}
-    alt="Profile"
-    className="
+                <div className="group relative flex justify-center" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                    <img
+                        src={pfp}
+                        alt="Profile"
+                        className="
       rounded-full
       w-24 h-24 sm:w-28 sm:h-28
-      object-cover
+      object-cover group-hover:scale-110 transition-transform duration-300 ease-in-out
     "
-  />
+                    />
 
-  <span
-    className="
+                    <span
+                        className="
       absolute left-12 -top-3
       px-3 py-2
       bg-secondary
@@ -98,11 +122,11 @@ useEffect(()=>{
       bg-secondary/90
       text-primary
       animate-tooltip
-      whitespace-nowrap"
-  >
-    {greet}
-  </span>
-</div>
+      whitespace-nowrap group-hover:scale-110 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                    >
+                        {greet}
+                    </span>
+                </div>
 
             </div>
             <Section id='about'>
@@ -179,16 +203,16 @@ useEffect(()=>{
                 <Personal></Personal>
             </Section>
             <Section id='contactus'>
-                <Cta/>
+                <Cta />
             </Section>
             <Section>
-                <Footer/>        
+                <Footer />
             </Section>
         </div>
     )
 }
 
-const Section = ({ id,children }) => (
+const Section = ({ id, children }) => (
     <div id={id} className="flex flex-col gap-4 mt-10 px-6 sm:px-10 lg:px-16 max-w-xl scroll-mt-12">
         {children}
     </div>
