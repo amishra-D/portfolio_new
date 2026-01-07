@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { HiMoon, HiSun, HiHome } from "react-icons/hi"
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { useNavigate } from "react-router-dom"
 import { IoMdMenu } from "react-icons/io";
+import { FaXTwitter } from "react-icons/fa6";
 const Nav = () => {
   const navigate = useNavigate()
   const [isDark, setIsDark] = useState(false)
@@ -54,7 +55,7 @@ const Nav = () => {
         <FaLinkedin className="nav-icon" />
       </a>
       <a href="https://x.com/Anshu_mishraD" target="_blank" rel="noreferrer" className="hover:scale-135 transition-all ease-in-out duration-200">
-        <FaTwitter className="nav-icon" />
+        <FaXTwitter className="nav-icon" />
       </a>
       <button onClick={toggleTheme} title="Toggle theme" className="hover:scale-135 transition-all ease-in-out duration-200">
         {isDark ? <HiSun className="nav-icon" /> : <HiMoon className="nav-icon" />}

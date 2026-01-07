@@ -3,6 +3,8 @@ import Card from "./Card"
 import Skills2 from "./Skills2"
 import Projects from "./Projects"
 import technoLogo from "../assets/techno-logo.png"
+import { FaDatabase } from "react-icons/fa";
+import { FaCode } from "react-icons/fa6";
 import cert1 from "../assets/cert1.png"
 import hackerrank from "../assets/hackerrank.png"
 import pfp from "../assets/pfp.jpeg"
@@ -11,9 +13,11 @@ import Seaparator from "./Seaparator.jsx"
 import Personal from "./Personal.jsx"
 import { HiLocationMarker } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
+import { IoNewspaperSharp } from "react-icons/io5";
 import Cta from "./Cta.jsx"
 import { FaChessBishop } from "react-icons/fa"
 import getTimeGreeting from '../hooks/timegreeting.js'
+import Acheivements from "./Acheivements.jsx"
 const Sidecard = () => {
     const [subtitle, setsubtitle] = useState("Developer")
     const [isDark, setIsDark] = useState(false)
@@ -81,7 +85,7 @@ const Sidecard = () => {
                         </span>
                     </div>
 
-                    <a href='https://maps.app.goo.gl/2QXuJC1PQrwDkhwh7' className="mt-4 flex gap-2">
+                    <a href='https://maps.app.goo.gl/2QXuJC1PQrwDkhwh7' target="_blank" className="mt-4 flex gap-2">
                         <div className="bg-secondary p-2 rounded-md"><HiLocationMarker /></div>
                         <div>
                             <p className="font-semibold text-sm">Location</p>
@@ -91,7 +95,7 @@ const Sidecard = () => {
                         </div>
                     </a>
 
-                    <a href='https://mail.google.com/mail/?view=cm&fs=1&to=anshumishraocog@gmail.com' className="mt-2 flex gap-2">
+                    <a href='https://mail.google.com/mail/?view=cm&fs=1&to=anshumishraocog@gmail.com' target="_blank" className="mt-2 flex gap-2">
                         <div className="bg-secondary p-2 rounded-md"><MdEmail /></div>
                         <div>
                             <p className="font-semibold text-sm">Email</p>
@@ -106,6 +110,7 @@ const Sidecard = () => {
                         src={pfp}
                         alt="Profile"
                         className="
+     
       rounded-full
       w-24 h-24 sm:w-28 sm:h-28
       object-cover group-hover:scale-110 transition-transform duration-300 ease-in-out
@@ -136,20 +141,97 @@ const Sidecard = () => {
                     strong interest in machine learning and data-driven problem solving.
                     Actively working on low-latency, interactive features, scalable backend
                     flows, and practical{" "}
-                    <a href='https://www.ibm.com/think/topics/machine-learning' className="text-primary font-medium underline underline-offset-1">
-                        Machine Learning
-                    </a>{" "}
-                    models while continuously learning and building. Check out my{" "}
-                    <a className="text-primary font-medium underline underline-offset-1" href="https://drive.google.com/file/d/17yHzHcaXlqKxsVxd5oS8Y3Ok2bmzhTJo/view?usp=sharing">
-                        Resume
-                    </a>.
+                    <span className="group inline-flex items-center">
+  <a
+    href="https://www.ibm.com/think/topics/machine-learning"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-primary font-medium underline underline-offset-1"
+  >
+    Machine Learning
+  </a>
+  <span
+    className="
+      overflow-hidden
+      w-0
+      group-hover:w-5
+      transition-all
+      duration-200
+      flex
+      items-center
+      justify-center
+    "
+  >
+    <FaDatabase
+      className="
+        text-sm
+        opacity-0
+        group-hover:opacity-100
+        transition-all
+        ease-in-out
+        duration-150
+        -translate-x-1
+        group-hover:translate-x-[0.5px]
+      "
+    />
+  </span>
+</span>
+
+{" "}models while continuously  <br className="hidden md:block" />learning and building. Check out my{" "}
+<span className="group inline-flex items-center">
+  <a
+    href="https://drive.google.com/file/d/17yHzHcaXlqKxsVxd5oS8Y3Ok2bmzhTJo/view?usp=sharing"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-primary font-medium underline underline-offset-2"
+  >
+    Resume
+  </a>
+
+  <span
+    className="
+      overflow-hidden
+      w-0
+      group-hover:w-4
+      transition-all
+      duration-200
+      flex
+      items-center
+      justify-center
+    "
+  >
+    <IoNewspaperSharp
+      className="
+        text-sm
+        opacity-0
+        group-hover:opacity-100
+        transition-all
+        ease-in-out
+        duration-150
+        -translate-x-1
+        group-hover:translate-x-[0.5px]
+      "
+    />
+  </span>
+</span>
+
                 </p>
             </Section>
 
             <Section>
                 <h2 className="font-bold text-xl">Consistency</h2>
                 <p className="text-secondary text-sm mb-4">
-                    Daily problem solving on <a className='text-primary underline underline-offset-1' href='https://leetcode.com/u/AnshuM18/'>LeetCode</a>
+                    Daily problem solving on <span className="group inline-flex items-center"><a className='text-primary underline underline-offset-1' target="_blank" href='https://leetcode.com/u/AnshuM18/'>LeetCode</a><span className="overflow-hidden
+      w-0
+      group-hover:w-4
+      transition-all
+      duration-200
+      flex
+      items-center
+      justify-center">
+                        <FaCode className="group-hover:opacity-100 opacity-0 -translate-x-1 group-hover:translate-x-[0.7px] text-sm transition-all duration-150"/>
+                        </span>
+                        </span>
                 </p>
 
                 <img
@@ -160,17 +242,18 @@ const Sidecard = () => {
                 />
             </Section>
 
-            <Section>
+            <Section id='Education'>
                 <h2 className="font-bold text-xl mb-2">Education</h2>
                 <Card
                     image={technoLogo}
                     title="Techno India University"
+                    link="https://www.technoindiauniversity.ac.in/"
                     subtitle="B.Tech (CSE - AIML)"
                     time="2022 - 2026"
                 />
             </Section>
 
-            <Section>
+            <Section id="Skills">
                 <h2 className="font-bold text-xl mb-2">Skills</h2>
                 <Skills2 />
             </Section>
@@ -191,6 +274,10 @@ const Sidecard = () => {
                     time="2025"
                     link="https://www.hackerrank.com/certificates/iframe/66babd0710ff"
                 />
+            </Section>
+            <Section id='certifications'>
+                <h2 className="font-bold text-xl mb-2">Acheivements</h2>
+                <Acheivements/>
             </Section>
 
             <Section id='projects'>
