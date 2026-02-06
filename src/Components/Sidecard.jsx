@@ -9,6 +9,8 @@ import cert1 from "../assets/cert1.png"
 import hackerrank from "../assets/hackerrank.png"
 import pfp from "../assets/pfp.jpeg"
 import Footer from "./Footer"
+import SpotifyCard from "./SpotifyCard"
+import ChessLastGame from "./ChessLastGame"
 import Seaparator from "./Seaparator.jsx"
 import Personal from "./Personal.jsx"
 import { HiLocationMarker } from "react-icons/hi";
@@ -49,7 +51,6 @@ const Sidecard = () => {
     const handleMouseEnter = () => {
         timerRef.current = setTimeout(() => {
             setgreet(getTimeGreeting());
-            setVisible(false);
         }, 2000);
     };
 
@@ -134,6 +135,11 @@ const Sidecard = () => {
                 </div>
 
             </div>
+
+            <SpotifyCard />
+
+            <ChessLastGame />
+
             <Section id='about'>
                 <h2 className="font-bold text-xl">About</h2>
                 <p className="text-secondary text-sm sm:text-md">

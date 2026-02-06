@@ -2,32 +2,70 @@
 .font-mono {
   font-family: "JetBrains Mono", monospace;
 }
-@custom-variant dark (&:where(.dark, .dark *));@layer components {
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-surface: #fcfcfd;
+  --bg-card: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --text-primary: #0b0b0b;
+  --text-secondary: #6b6b6b;
+  --border-default: #e6e6e6;
+}
+
+.dark {
+  --bg-surface: #0b0b0b;
+  --bg-card: #070707;
+  --bg-secondary: #111111;
+  --text-primary: #f8f8f8;
+  --text-secondary: #9ca3a3;
+  --border-default: #1f1f1f;
+}
+
+@layer components {
+  .bg-surface,
+  .bg-card,
+  .bg-secondary,
+  .text-primary,
+  .text-secondary,
+  .border-default {
+    transition: background-color 280ms ease, color 280ms ease, border-color 280ms ease;
+  }
+
   .bg-surface {
-    @apply bg-white dark:bg-neutral-950;
+    background-color: var(--bg-surface) !important;
   }
-  .bg-opp{
-    @apply bg-neutral-950 dark:bg-white;
+
+  .bg-opp {
+    background-color: var(--bg-card) !important;
   }
- .bg-secondary{
-    @apply bg-zinc-200 dark:bg-neutral-900;
- }
+
+  .bg-secondary {
+    background-color: var(--bg-secondary) !important;
+  }
+
   .bg-card {
-    @apply bg-white dark:bg-neutral-800;
+    background-color: var(--bg-card) !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   }
 
   .text-primary {
-    @apply text-neutral-900 dark:text-white;
+    color: var(--text-primary) !important;
   }
 
   .text-secondary {
-    @apply text-neutral-500 dark:text-neutral-400;
+    color: var(--text-secondary) !important;
   }
 
   .border-default {
-    @apply border-neutral-950 dark:border-neutral-400;
+    border-color: var(--border-default) !important;
   }
 }
+
+html, body {
+  transition: background-color 280ms ease, color 280ms ease;
+}
+
 .fade-blur {
   opacity: 0;
   filter: blur(8px);
