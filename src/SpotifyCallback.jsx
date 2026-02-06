@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { exchangeCodeForToken } from "./Components/spotifyauth"
+import { exchangeCodeForToken } from "./Components/spotifyAuth1"
 
 export default function SpotifyCallback() {
   useEffect(() => {
