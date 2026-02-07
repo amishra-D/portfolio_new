@@ -212,11 +212,7 @@ export default function ChessProfileCard({ username }) {
       }
 
       try {
-        const res = await fetch(
-          `https://corsproxy.io/?https://lichess.org/api/user/${username}`,
-          { headers: { Accept: "application/json" } }
-        );
-
+       const res = await fetch(`/api/lichess/${username}`);
         if (res.ok) {
           const li = await res.json();
           setLichess(li);
