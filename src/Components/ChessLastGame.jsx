@@ -92,10 +92,17 @@ export default function ChessLastGame({ username = "beefygotit" }) {
 
   return (
     <div className="w-full px-6 sm:px-10 lg:px-16 mt-4">
-      <div className="w-full max-w-md bg-surface/60 border border-white/10 rounded-lg p-3 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-150">
+      <div className="
+        w-full max-w-md 
+        bg-card border border-default rounded-xl p-3.5 
+        shadow-sm hover:shadow-md 
+        hover:-translate-y-0.5 transition-all duration-300
+        relative overflow-hidden
+        group
+      ">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-secondary border border-default/50 flex items-center justify-center">
               <FaChess className="text-xl text-primary" />
             </div>
             <div>
@@ -113,26 +120,31 @@ export default function ChessLastGame({ username = "beefygotit" }) {
         </div>
 
         <div className="mt-3 text-sm">
-          <p className="font-medium text-primary">
+          <p className="font-semibold text-primary">
             vs {game.opponent} <span className="text-xs text-secondary font-normal">({game.opponentRating})</span>
           </p>
           {game.snippet && (
-            <p className="text-xs text-secondary mt-2 leading-relaxed italic opacity-80">
+            <p className="text-xs text-secondary mt-2 leading-relaxed italic opacity-85 font-sans">
               {game.snippet}
             </p>
           )}
         </div>
 
-        <div className="mt-4 flex items-center gap-2">
+        <div className="mt-4 flex items-center gap-2 pt-3 border-t border-default/40">
           <a 
             href={game.url} 
             target="_blank" 
             rel="noreferrer" 
-            className="text-xs px-3 py-1 rounded bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+            className="
+              text-xs px-3 py-1.5 rounded-lg 
+              bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 
+              hover:bg-neutral-800 dark:hover:bg-neutral-200 
+              transition-colors duration-200 font-semibold
+            "
           >
             Replay Game
           </a>
-          <span className="text-[10px] uppercase tracking-tighter text-secondary ml-auto opacity-60">
+          <span className="text-[10px] uppercase tracking-tighter text-secondary ml-auto opacity-70">
             {new Date(game.endedAt * 1000).toLocaleDateString()}
           </span>
         </div>

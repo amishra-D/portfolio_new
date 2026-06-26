@@ -19,7 +19,7 @@ import { IoNewspaperSharp } from "react-icons/io5";
 import Cta from "./Cta.jsx"
 import { FaChessBishop } from "react-icons/fa"
 import getTimeGreeting from '../hooks/timegreeting.js'
-import Acheivements from "./Acheivements.jsx"
+import Achievements from "./Achievements.jsx"
 const Sidecard = () => {
     const [subtitle, setsubtitle] = useState("Developer")
     const [isDark, setIsDark] = useState(false)
@@ -281,9 +281,9 @@ const Sidecard = () => {
                     link="https://www.hackerrank.com/certificates/iframe/66babd0710ff"
                 />
             </Section>
-            <Section id='certifications'>
-                <h2 className="font-bold text-xl mb-2">Acheivements</h2>
-                <Acheivements/>
+            <Section id='achievements'>
+                <h2 className="font-bold text-xl mb-2">Achievements</h2>
+                <Achievements/>
             </Section>
 
             <Section id='projects'>

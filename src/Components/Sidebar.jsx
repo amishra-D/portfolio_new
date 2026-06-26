@@ -6,6 +6,7 @@ function Sidebar() {
     { id: "about", label: "About" },
     { id: "Skills", label: "Skills" },
     { id: "certifications", label: "Certifications" },
+    { id: "achievements", label: "Achievements" },
     { id: "projects", label: "Projects" },
     { id: "contactus", label: "Let's Connect" },
   ]

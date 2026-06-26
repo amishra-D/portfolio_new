@@ -12,6 +12,7 @@ import {
   SiRedux,
   SiNodedotjs,
   SiExpress,
+  SiRabbitmq,
 
   SiMongodb,
   SiFirebase,
@@ -29,6 +30,10 @@ import {
   SiGithub,
   SiHtml5,
   SiCss3,
+  SiDocker,
+  SiAmazonwebservices,
+  SiJest,
+  SiPrometheus,
 } from "react-icons/si"
 
 const languages = [
@@ -49,6 +54,7 @@ const frontend = [
 const backend = [
   { name: "Node.js", icon: SiNodedotjs, link: "https://nodejs.org/en/docs" },
   { name: "Express", icon: SiExpress, link: "https://expressjs.com/" },
+  { name: "RabbitMQ", icon: SiRabbitmq, link: "https://www.rabbitmq.com/documentation.html" },
 ]
 
 const databases = [
@@ -72,6 +78,10 @@ const dataML = [
 const tools = [
   { name: "Git", icon: SiGit, link: "https://git-scm.com/doc" },
   { name: "GitHub", icon: SiGithub, link: "https://docs.github.com/" },
+  { name: "Docker", icon: SiDocker, link: "https://docs.docker.com/" },
+  { name: "AWS", icon: SiAmazonwebservices, link: "https://aws.amazon.com/" },
+  { name: "Jest", icon: SiJest, link: "https://jestjs.io/" },
+  { name: "Prometheus", icon: SiPrometheus, link: "https://prometheus.io/docs/introduction/overview/" },
 ]
 
 function Skills2() {

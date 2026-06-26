@@ -38,27 +38,51 @@ const Nav = () => {
     <div
       className="
         group flex items-center justify-center gap-6
-        h-16 px-5 rounded-full
-        bg-surface text-primary border-default border-[0.5px]
-        hover:gap-8 transition-all duration-500 ease-in-out
-        opacity-70 backdrop-blur-4xl
+        h-14 px-6 rounded-full
+        bg-card/85 text-primary border border-default
+        shadow-lg hover:shadow-xl
+        hover:gap-7 transition-all duration-300 ease-in-out
+        backdrop-blur-md
       "
     >
-      <button onClick={() => navigate("/")} title="Home" className="hover:scale-135 transition-all ease-in-out duration-200">
-        <HiHome className="nav-icon" />
+      <button 
+        onClick={() => navigate("/")} 
+        title="Home" 
+        className="text-secondary hover:text-primary hover:scale-125 transition-all duration-200 cursor-pointer"
+      >
+        <HiHome className="text-xl" />
       </button>
 
-      <a href="https://github.com/amishra-d" target="_blank" rel="noreferrer" className="hover:scale-135 transition-all ease-in-out duration-200">
-        <FaGithub className="nav-icon" />
+      <a 
+        href="https://github.com/amishra-d" 
+        target="_blank" 
+        rel="noreferrer" 
+        className="text-secondary hover:text-neutral-900 dark:hover:text-white hover:scale-125 transition-all duration-200"
+      >
+        <FaGithub className="text-xl" />
       </a>
-      <a href="https://www.linkedin.com/in/anshu-mishra-a5b645291/" target="_blank" rel="noreferrer" className="hover:scale-135 transition-all ease-in-out duration-200">
-        <FaLinkedin className="nav-icon" />
+      <a 
+        href="https://www.linkedin.com/in/anshu-mishra-a5b645291/" 
+        target="_blank" 
+        rel="noreferrer" 
+        className="text-secondary hover:text-[#0A66C2] hover:scale-125 transition-all duration-200"
+      >
+        <FaLinkedin className="text-xl" />
       </a>
-      <a href="https://x.com/Anshu_mishraD" target="_blank" rel="noreferrer" className="hover:scale-135 transition-all ease-in-out duration-200">
-        <FaXTwitter className="nav-icon" />
+      <a 
+        href="https://x.com/Anshu_mishraD" 
+        target="_blank" 
+        rel="noreferrer" 
+        className="text-secondary hover:text-neutral-900 dark:hover:text-white hover:scale-125 transition-all duration-200"
+      >
+        <FaXTwitter className="text-xl" />
       </a>
-      <button onClick={toggleTheme} title="Toggle theme" className="hover:scale-135 transition-all ease-in-out duration-200">
-        {isDark ? <HiSun className="nav-icon" /> : <HiMoon className="nav-icon" />}
+      <button 
+        onClick={toggleTheme} 
+        title="Toggle theme" 
+        className="text-secondary hover:text-primary hover:scale-125 transition-all duration-200 cursor-pointer"
+      >
+        {isDark ? <HiSun className="text-xl" /> : <HiMoon className="text-xl" />}
       </button>
     </div>
   )
